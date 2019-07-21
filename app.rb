@@ -23,14 +23,53 @@ class App < Sinatra::Base
   end
 
   post "/" do
-    params = JSON.parse(request.body.read)
+    json = request.body.read
+    payload = JSON.parse(json)
 
-    case params["type"]
+    logger.debug { "payload=#{payload}, json=#{json}" }
+
+    case payload["type"]
     when "url_verification"
-      challenge = params["challenge"]
+      challenge = payload["challenge"]
       { challenge: challenge }.to_json
+    when "event_callback"
+      event = payload["event"]
+      case event["type"]
+      when "emoji_changed"
+        case event["subtype"]
+        when "add"
+          emoji_name = event["name"]
+          message = "New emoji is add :#{emoji_name}: `:#{emoji_name}:`"
+
+          if event["value"].start_with?("alias:")
+            origin_emoji = event["value"].gsub(/^alias:/, "")
+            message << " (alias of `:#{origin_emoji}:`)"
+          end
+
+          App.post_slack(message)
+        end
+      else
+        raise "Unknown callback event: #{event["type"]}"
+      end
+      ""
     else
-      raise "Unknown event"
+      raise "Unknown event: #{payload["type"]}"
     end
+  end
+
+  def self.post_slack(message)
+    notifier = Slack::Notifier.new(ENV["SLACK_WEBHOOK_URL"])
+
+    options = {
+      attachments: [
+        {
+          fallback: message,
+          text:     message,
+          color:    "good",
+        },
+      ],
+    }
+
+    notifier.ping(nil, options)
   end
 end
