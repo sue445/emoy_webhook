@@ -23,6 +23,7 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
+    rake (12.3.2)
     rollbar (2.21.0)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
@@ -69,6 +70,7 @@ DEPENDENCIES
   puma
   puma-heroku
   rack-test
+  rake
   rollbar
   rspec
   simplecov
