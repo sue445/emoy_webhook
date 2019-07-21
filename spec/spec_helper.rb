@@ -120,6 +120,10 @@ RSpec.configure do |config|
 
   config.include Rack::Test::Methods
   config.include FixtureUtil
+
+  config.after do
+    Cache.flush_all
+  end
 end
 
 def app

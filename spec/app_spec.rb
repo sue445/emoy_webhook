@@ -21,14 +21,30 @@ describe App do
     context "when emoji_changed" do
       context "when add" do
         let(:payload) { fixture("emoji_changed_add.json") }
+        let(:message) { "New emoji is add :picard_facepalm: `:picard_facepalm:`" }
 
-        it { should be_ok }
+        context "called once" do
+          it { should be_ok }
 
-        it "post_slack is called" do
-          subject
+          it "post_slack is called" do
+            subject
 
-          message = "New emoji is add :picard_facepalm: `:picard_facepalm:`"
-          expect(App).to have_received(:post_slack).with(message)
+            expect(App).to have_received(:post_slack).with(message)
+          end
+        end
+
+        context "called twice" do
+          before do
+            post "/", payload, { "CONTENT_TYPE" => "application/json" }
+          end
+
+          it { should be_ok }
+
+          it "post_slack is called once" do
+            subject
+
+            expect(App).to have_received(:post_slack).with(message).once
+          end
         end
       end
 
