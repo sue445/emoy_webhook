@@ -8,10 +8,41 @@ describe App do
   describe "POST /" do
     subject { post "/", payload, { "CONTENT_TYPE" => "application/json" } }
 
+    before do
+      allow(App).to receive(:post_slack)
+    end
+
     context "when url_verification" do
       let(:payload) { fixture("url_verification.json") }
 
       it { should be_ok }
+    end
+
+    context "when emoji_changed" do
+      context "when add" do
+        let(:payload) { fixture("emoji_changed_add.json") }
+
+        it { should be_ok }
+
+        it "post_slack is called" do
+          subject
+
+          message = "New emoji is add :picard_facepalm: `:picard_facepalm:`"
+          expect(App).to have_received(:post_slack).with(message)
+        end
+      end
+
+      context "when remove" do
+        let(:payload) { fixture("emoji_changed_remove.json") }
+
+        it { should be_ok }
+
+        it "post_slack isn't called" do
+          subject
+
+          expect(App).not_to have_received(:post_slack)
+        end
+      end
     end
   end
 end
