@@ -39,7 +39,14 @@ class App < Sinatra::Base
         case event["subtype"]
         when "add"
           emoji_name = event["name"]
-          App.post_slack("New emoji is add :#{emoji_name}: `:#{emoji_name}:`")
+          message = "New emoji is add :#{emoji_name}: `:#{emoji_name}:`"
+
+          if event["value"].start_with?("alias:")
+            origin_emoji = event["value"].gsub(/^alias:/, "")
+            message << " (alias of `:#{origin_emoji}:`)"
+          end
+
+          App.post_slack(message)
         end
       else
         raise "Unknown callback event: #{event["type"]}"

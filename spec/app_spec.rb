@@ -32,6 +32,19 @@ describe App do
         end
       end
 
+      context "when add (alias)" do
+        let(:payload) { fixture("emoji_changed_add_alias.json") }
+
+        it { should be_ok }
+
+        it "post_slack is called" do
+          subject
+
+          message = "New emoji is add :picard_facepalm_alias: `:picard_facepalm_alias:` (alias of `:picard_facepalm:`)"
+          expect(App).to have_received(:post_slack).with(message)
+        end
+      end
+
       context "when remove" do
         let(:payload) { fixture("emoji_changed_remove.json") }
 
