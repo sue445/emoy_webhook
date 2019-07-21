@@ -35,10 +35,10 @@ workflows:
   build-and-deploy:
     jobs:
       - rspec
-#      - heroku/deploy-via-git:
-#          context: Heroku
-#          requires:
-#            - rspec
-#          filters:
-#            branches:
-#              only: master
+      - heroku/deploy-via-git:
+          context: Heroku
+          requires:
+            - rspec
+          filters:
+            branches:
+              only: master
