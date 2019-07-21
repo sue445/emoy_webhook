@@ -1,0 +1,14 @@
+default:
+  servers:
+    - "<%= ENV.fetch('MEMCACHED_HOST', 'localhost') %>:11211"
+  options:
+    namespace: "emoy_webhook"
+    compress: true
+    expires_in: 60 # 1 minutes
+
+production:
+  servers: <%= ENV["MEMCACHEDCLOUD_SERVERS"]&.split(",") %>
+  options:
+    expires_in: 300 # 5 minutes
+    username: <%= ENV["MEMCACHEDCLOUD_USERNAME"] %>
+    password: <%= ENV["MEMCACHEDCLOUD_PASSWORD"] %>

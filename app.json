@@ -25,6 +25,7 @@
     }
   },
   "addons": [
+    "memcachedcloud",
     "papertrail",
     "rollbar"
   ]

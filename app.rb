@@ -4,6 +4,7 @@ Bundler.require(:default, ENV["RACK_ENV"])
 require "rollbar/middleware/sinatra"
 require "sinatra/custom_logger"
 require "logger"
+require_relative "./lib/cache"
 
 class App < Sinatra::Base
   use Rollbar::Middleware::Sinatra
@@ -16,6 +17,13 @@ class App < Sinatra::Base
     logger.level = debug_logging ? Logger::DEBUG : Logger::INFO
 
     set :logger, logger
+  end
+
+  before do
+    Global.configure do |config|
+      config.environment = ENV["RACK_ENV"]
+      config.config_directory = "#{__dir__}/config/global"
+    end
   end
 
   get "/" do
@@ -46,7 +54,10 @@ class App < Sinatra::Base
             message << " (alias of `:#{origin_emoji}:`)"
           end
 
-          App.post_slack(message)
+          unless Cache.exists?(message)
+            App.post_slack(message)
+            Cache.set(message, "1")
+          end
         end
       else
         raise "Unknown callback event: #{event["type"]}"
