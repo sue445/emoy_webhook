@@ -8,6 +8,7 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem "puma", require: false
 gem "puma-heroku", require: false
+gem "rollbar"
 gem "sinatra"
 gem "sinatra-contrib"
 
