@@ -1,0 +1,21 @@
+{
+  "name": "emoy webhook",
+  "description": "emoy webhook (Emoji notify webhook) notify when new emoji is add",
+  "keywords": ["Slack", "emoji", "webhook"],
+  "website": "https://github.com/sue445/emoy_webhook",
+  "repository": "https://github.com/sue445/emoy_webhook",
+  "env": {
+    "SLACK_WEBHOOK_URL": {
+      "description": "Incoming Webhook URL"
+    },
+    "DEBUG_LOGGING": {
+      "description": "Whether to output debug log (true or false)",
+      "value": "false",
+      "required": false
+    }
+  },
+  "addons": [
+    "papertrail",
+    "rollbar"
+  ]
+}
