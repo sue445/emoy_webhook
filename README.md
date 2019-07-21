@@ -9,7 +9,7 @@ emoy webhook (**Emo**ji notif**y** webhook) notify when new emoji is add
 ![example](img/example.png)
 
 ## Requirements
-* Slack app and OAuth Access Token
+* Slack app
   * see [CREATE_SLACK_APP.md](CREATE_SLACK_APP.md)
 * Incoming webhook
   * https://slack.com/apps/A0F7XDUAZ
