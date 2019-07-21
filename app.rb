@@ -21,4 +21,16 @@ class App < Sinatra::Base
   get "/" do
     "It works"
   end
+
+  post "/" do
+    params = JSON.parse(request.body.read)
+
+    case params["type"]
+    when "url_verification"
+      challenge = params["challenge"]
+      { challenge: challenge }.to_json
+    else
+      raise "Unknown event"
+    end
+  end
 end
