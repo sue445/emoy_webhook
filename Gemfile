@@ -14,6 +14,7 @@ gem "sinatra-contrib"
 
 group :development do
   gem "foreman", require: false
+  gem "pry-byebug", group: :test
   gem "rake", require: false
 end
 
