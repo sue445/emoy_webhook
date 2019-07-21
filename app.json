@@ -12,6 +12,16 @@
       "description": "Whether to output debug log (true or false)",
       "value": "false",
       "required": false
+    },
+    "MAX_THREADS": {
+      "description": "puma threads count",
+      "value": "5",
+      "required": false
+    },
+    "WEB_CONCURRENCY": {
+      "description": "puma workers count",
+      "value": "1",
+      "required": false
     }
   },
   "addons": [
