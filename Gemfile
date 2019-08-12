@@ -17,6 +17,7 @@ gem "sinatra-contrib"
 gem "slack-notifier"
 
 group :development do
+  gem "dotenv", require: "dotenv/load"
   gem "foreman", require: false
   gem "pry-byebug", group: :test
   gem "rake", require: false
