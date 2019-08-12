@@ -20,6 +20,8 @@ class App < Sinatra::Base
   end
 
   before do
+    Redis.current = Redis.new(url: ENV["REDIS_URL"])
+
     Global.configure do |config|
       config.environment = ENV["RACK_ENV"]
       config.config_directory = "#{__dir__}/config/global"
@@ -54,9 +56,10 @@ class App < Sinatra::Base
             message << " (alias of `:#{origin_emoji}:`)"
           end
 
-          unless Cache.exists?(message)
+          cache = Cache.new(message)
+          unless cache.exists?
             App.post_slack(message)
-            Cache.set(message, "1")
+            cache.set("1")
           end
         end
       else

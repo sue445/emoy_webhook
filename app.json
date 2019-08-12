@@ -25,6 +25,7 @@
     }
   },
   "addons": [
+    "heroku-redis",
     "memcachedcloud",
     "papertrail",
     "rollbar"
