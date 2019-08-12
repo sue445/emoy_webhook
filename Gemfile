@@ -6,16 +6,16 @@ ruby "2.6.3"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-gem "dalli"
-gem "global"
 gem "puma", require: false
 gem "puma-heroku", require: false
+gem "redis-objects"
 gem "rollbar"
 gem "sinatra"
 gem "sinatra-contrib"
 gem "slack-notifier"
 
 group :development do
+  gem "dotenv", require: "dotenv/load"
   gem "foreman", require: false
   gem "pry-byebug", group: :test
   gem "rake", require: false
