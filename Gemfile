@@ -10,6 +10,7 @@ gem "dalli"
 gem "global"
 gem "puma", require: false
 gem "puma-heroku", require: false
+gem "redis-objects"
 gem "rollbar"
 gem "sinatra"
 gem "sinatra-contrib"
