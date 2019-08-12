@@ -21,11 +21,6 @@ class App < Sinatra::Base
 
   before do
     Redis.current = Redis.new(url: ENV["REDIS_URL"])
-
-    Global.configure do |config|
-      config.environment = ENV["RACK_ENV"]
-      config.config_directory = "#{__dir__}/config/global"
-    end
   end
 
   get "/" do
