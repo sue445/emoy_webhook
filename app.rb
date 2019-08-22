@@ -44,7 +44,7 @@ class App < Sinatra::Base
         case event["subtype"]
         when "add"
           emoji_name = event["name"]
-          message = "New emoji is add :#{emoji_name}: `:#{emoji_name}:`"
+          message = "A new emoji is added :#{emoji_name}: `:#{emoji_name}:`"
 
           if event["value"].start_with?("alias:")
             origin_emoji = event["value"].gsub(/^alias:/, "")
