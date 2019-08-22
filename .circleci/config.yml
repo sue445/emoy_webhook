@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   codeclimate: sue445/codeclimate@volatile
   ruby-orbs: sue445/ruby-orbs@volatile
-  heroku:    circleci/heroku@0.0.2
+  heroku:    circleci/heroku@0.0.8
 
 executors:
   default:
@@ -37,6 +37,18 @@ workflows:
     jobs:
       - rspec
       - heroku/deploy-via-git:
+          name: "Deploy to prickathon-emoy-webhook"
+          app-name: "prickathon-emoy-webhook"
+          context: Heroku
+          requires:
+            - rspec
+          filters:
+            branches:
+              only: master
+
+      - heroku/deploy-via-git:
+          name: "Deploy to rubyjp-emoy-webhook"
+          app-name: "rubyjp-emoy-webhook"
           context: Heroku
           requires:
             - rspec
