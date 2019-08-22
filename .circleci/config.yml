@@ -44,7 +44,7 @@ workflows:
             - rspec
           filters:
             branches:
-              only: feature/heroku_deploy
+              only: master
 
       - heroku/deploy-via-git:
           name: "Deploy to rubyjp-emoy-webhook"
@@ -54,4 +54,4 @@ workflows:
             - rspec
           filters:
             branches:
-              only: feature/heroku_deploy
+              only: master
