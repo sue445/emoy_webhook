@@ -15,7 +15,7 @@
     },
     "MAX_THREADS": {
       "description": "puma threads count",
-      "value": "5",
+      "value": "1",
       "required": false
     },
     "WEB_CONCURRENCY": {
