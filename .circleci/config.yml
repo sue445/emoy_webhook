@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   codeclimate: sue445/codeclimate@volatile
-  ruby-orbs: sue445/ruby-orbs@volatile
+  ruby-orbs: sue445/ruby-orbs@dev:ec11d89bf15b2667ddae61de8074da96281a965f
   heroku:    circleci/heroku@0.0.8
 
 executors:
