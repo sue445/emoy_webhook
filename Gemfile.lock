@@ -39,7 +39,7 @@ GEM
     redis (4.1.3)
     redis-objects (1.5.0)
       redis (~> 4.0)
-    rollbar (2.23.2)
+    rollbar (2.24.0)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
