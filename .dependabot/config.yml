@@ -27,6 +27,9 @@ update_configs:
           dependency_name: "rubocop"
           update_type: "all"
       - match:
+          dependency_name: "pry"
+          update_type: "all"
+      - match:
           dependency_name: "backports"
           update_type: "semver:minor"
 
