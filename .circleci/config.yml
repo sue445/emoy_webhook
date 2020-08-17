@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   codeclimate: sue445/codeclimate@volatile
   ruby-orbs: sue445/ruby-orbs@volatile
-  heroku:    circleci/heroku@0.0.8
+  heroku:    circleci/heroku@1.1.1
 
 executors:
   default:
