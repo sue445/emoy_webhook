@@ -30,9 +30,7 @@ jobs:
           after_build_args: '--coverage-input-type simplecov'
           steps:
             - run: bundle exec rspec
-      - slack/notify:
-          event: fail
-          template: basic_fail_1
+      - slack/status
 
 workflows:
   version: 2
@@ -50,6 +48,4 @@ workflows:
             branches:
               only: master
           post-deploy:
-            - slack/notify:
-                event: fail
-                template: basic_fail_1
+            - slack/status
