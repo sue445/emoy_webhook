@@ -33,7 +33,7 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    rake (13.0.2)
+    rake (13.0.3)
     redis (4.2.5)
     redis-objects (1.5.0)
       redis (~> 4.0)
