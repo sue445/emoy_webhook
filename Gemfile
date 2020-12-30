@@ -2,15 +2,15 @@
 
 source "https://rubygems.org"
 
-ruby "2.7.2"
+ruby "3.0.0"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem "puma", require: false
 gem "redis-objects"
 gem "rollbar"
-gem "sinatra"
-gem "sinatra-contrib"
+gem "sinatra", ">= 2.1.0"
+gem "sinatra-contrib", ">= 2.1.0"
 gem "slack-notifier"
 
 group :development do
