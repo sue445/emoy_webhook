@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "2.7.2"
+ruby "3.0.0"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
@@ -11,7 +11,7 @@ gem "redis-objects"
 gem "rollbar"
 gem "sinatra", ">= 2.1.0"
 gem "sinatra-contrib", ">= 2.1.0"
-gem "slack-notifier"
+gem "slack-notifier", github: "fusic/slack-notifier", branch: "resolve_warning_ruby27" # c.f. https://github.com/stevenosloan/slack-notifier/pull/119
 
 group :development do
   gem "dotenv", require: "dotenv/load"
