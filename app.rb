@@ -20,7 +20,7 @@ class App < Sinatra::Base
   end
 
   before do
-    Redis.current = Redis.new(url: ENV["HEROKU_REDIS_TEAL_URL"] || ENV["REDIS_URL"])
+    Redis.current = Redis.new(url: ENV["REDIS_URL"])
   end
 
   get "/" do
