@@ -73,7 +73,7 @@ GEM
       tins (~> 1.0)
     thor (1.1.0)
     tilt (2.0.10)
-    tins (1.28.0)
+    tins (1.29.0)
       sync
 
 PLATFORMS
