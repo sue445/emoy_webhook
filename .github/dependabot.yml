@@ -9,7 +9,3 @@ updates:
   assignees:
   - sue445
   versioning-strategy: lockfile-only
-  ignore:
-  - dependency-name: rspec-support
-    versions:
-    - 3.10.2
