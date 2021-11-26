@@ -9,12 +9,12 @@ orbs:
 executors:
   default:
     docker:
-      - image: circleci/ruby:3.0.2
+      - image: cimg/ruby:3.0.3
         environment:
           RACK_ENV: test
           CC_TEST_REPORTER_ID: 73528f83b1cf108dfc952f026c4cef899c61308702e5824e7f21e92cf49a9ee2
           REDIS_URL: redis://127.0.0.1:6379/0
-      - image: circleci/redis:alpine
+      - image: cimg/redis:6.2
     working_directory: ~/app
 
 jobs:
