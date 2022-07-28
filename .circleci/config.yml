@@ -9,7 +9,7 @@ orbs:
 executors:
   default:
     docker:
-      - image: cimg/ruby:3.1.0
+      - image: cimg/ruby:3.1.2
         environment:
           RACK_ENV: test
           CC_TEST_REPORTER_ID: 73528f83b1cf108dfc952f026c4cef899c61308702e5824e7f21e92cf49a9ee2
