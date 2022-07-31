@@ -9,8 +9,8 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gem "puma", require: false
 gem "redis-objects"
 gem "rollbar"
-gem "sinatra", ">= 2.1.0"
-gem "sinatra-contrib", ">= 2.1.0"
+gem "sinatra", ">= 2.2.0"
+gem "sinatra-contrib", ">= 2.2.0"
 gem "slack-notifier", ">= 2.4.0"
 
 group :development do
