@@ -20,7 +20,7 @@ class App < Sinatra::Base
   end
 
   before do
-    Redis.current = Redis.new(url: ENV["REDIS_URL"])
+    Redis::Objects.redis = ConnectionPool.new(size: 5, timeout: 5) { Redis.new(url: ENV["REDIS_URL"]) }
   end
 
   get "/" do

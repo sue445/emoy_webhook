@@ -6,6 +6,7 @@ ruby "3.1.2"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
+gem "connection_pool"
 gem "puma", require: false
 gem "redis-objects"
 gem "rollbar"
