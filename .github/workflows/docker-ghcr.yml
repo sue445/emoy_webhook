@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - "*"
+    branches:
+      - main
 
   # Run builds for any PRs.
   pull_request:
