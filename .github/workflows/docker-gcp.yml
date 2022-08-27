@@ -36,7 +36,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            asia-docker.pkg.dev/emoy-webhook/emoy-webhook
+            asia-docker.pkg.dev/emoy-webhook/emoy-webhook/app
           tag-sha: false
 
       - id: auth
