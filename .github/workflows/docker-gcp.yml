@@ -60,9 +60,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          # TODO: debug
-          # push: ${{ github.event_name == 'push' && (startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/main') }}
-          push: ${{ github.event_name == 'pull_request' && github.ref == 'refs/pull/210/merge' }}
+          push: ${{ github.event_name == 'push' && (startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/main') }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
