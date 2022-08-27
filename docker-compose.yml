@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    working_dir: "/app"
+    environment:
+      - SLACK_WEBHOOK_URL
+      # - DEBUG_LOGGING
+      - MAX_THREADS=1
+      - WEB_CONCURRENCY=0
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
