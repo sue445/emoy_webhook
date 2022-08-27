@@ -7,7 +7,9 @@ WORKDIR /app
 COPY Gemfile Gemfile.lock /app/
 
 RUN bundle config set --local jobs 2 && \
-    bundle install --without=development test --deployment
+    bundle config set --local deployment 'true' && \
+    bundle config set --local without 'development test' && \
+    bundle install
 
 COPY . .
 
