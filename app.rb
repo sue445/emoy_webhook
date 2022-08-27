@@ -20,7 +20,15 @@ class App < Sinatra::Base
   end
 
   before do
-    Redis::Objects.redis = ConnectionPool.new(size: 5, timeout: 5) { Redis.new(url: ENV["REDIS_URL"]) }
+    if enabled_redis?
+      Redis::Objects.redis = ConnectionPool.new(size: 5, timeout: 5) { Redis.new(url: ENV["REDIS_URL"]) }
+    end
+  end
+
+  helpers do
+    def enabled_redis?
+      ENV["REDIS_URL"] && !ENV["REDIS_URL"].empty?
+    end
   end
 
   get "/" do
@@ -51,10 +59,14 @@ class App < Sinatra::Base
             message << " (alias of `:#{origin_emoji}:`)"
           end
 
-          cache = Cache.new(message)
-          unless cache.exists?
+          if enabled_redis?
+            cache = Cache.new(message)
+            unless cache.exists?
+              App.post_slack(message)
+              cache.set("1")
+            end
+          else
             App.post_slack(message)
-            cache.set("1")
           end
         end
       else
