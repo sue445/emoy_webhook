@@ -1,0 +1,29 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: emoy-webhook
+spec:
+  template:
+    metadata:
+      annotations:
+        run.googleapis.com/client-name: cloud-console
+        autoscaling.knative.dev/minScale: '0'
+        autoscaling.knative.dev/maxScale: '1'
+
+    spec:
+      containerConcurrency: 1
+      timeoutSeconds: 10
+      serviceAccountName: emoy-webhook-app@emoy-webhook.iam.gserviceaccount.com
+      containers:
+        - image: asia-docker.pkg.dev/emoy-webhook/emoy-webhook/app:main
+          ports:
+            - name: http1
+              containerPort: 8080
+          resources:
+            limits:
+              cpu: '1'
+              memory: 128Mi
+
+  traffic:
+    - percent: 100
+      latestRevision: true
