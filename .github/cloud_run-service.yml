@@ -24,6 +24,20 @@ spec:
               cpu: '1'
               memory: 128Mi
 
+          env:
+            - name: MAX_THREADS
+              value: "1"
+            - name: WEB_CONCURRENCY
+              value: "0"
+
+            # Get credentials from SecretManager
+            # c.f. https://cloud.google.com/run/docs/configuring/secrets
+            - name: SLACK_WEBHOOK_URL
+              valueFrom:
+                secretKeyRef:
+                  name: SLACK_WEBHOOK_URL
+                  key: latest
+
   traffic:
     - percent: 100
       latestRevision: true
