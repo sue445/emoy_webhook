@@ -35,8 +35,8 @@ spec:
             - name: SLACK_WEBHOOK_URL
               valueFrom:
                 secretKeyRef:
-                  name: SLACK_WEBHOOK_URL
                   key: latest
+                  name: SLACK_WEBHOOK_URL
 
   traffic:
     - percent: 100
