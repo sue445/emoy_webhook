@@ -46,6 +46,6 @@ workflows:
             - rspec
           filters:
             branches:
-              only: master
+              only: main
           post-deploy:
             - slack/status
