@@ -11,7 +11,7 @@ services:
       - WEB_CONCURRENCY=0
       - REDIS_URL=redis://redis:6379
     ports:
-      - "3000:3000"
+      - "8080:8080"
     depends_on:
       - redis
 

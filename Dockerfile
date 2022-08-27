@@ -13,4 +13,4 @@ RUN bundle config set --local jobs 2 && \
 
 COPY . .
 
-CMD ["bundle", "exec", "puma", "-p", "3000"]
+CMD ["bundle", "exec", "puma", "-p", "8080"]
