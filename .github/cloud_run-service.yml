@@ -12,7 +12,7 @@ spec:
 
     spec:
       containerConcurrency: 1
-      timeoutSeconds: 10
+      timeoutSeconds: 5
       serviceAccountName: emoy-webhook-app@emoy-webhook.iam.gserviceaccount.com
       containers:
         - image: asia-docker.pkg.dev/emoy-webhook/emoy-webhook/app:main
