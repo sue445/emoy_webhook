@@ -26,7 +26,8 @@ jobs:
         with:
           images: |
             ghcr.io/sue445/emoy_webhook
-          tag-sha: false
+          tags: |
+            type=sha
 
       - name: Login to GHCR
         uses: docker/login-action@v2
