@@ -30,14 +30,6 @@ spec:
             - name: WEB_CONCURRENCY
               value: "0"
 
-            # Get credentials from SecretManager
-            # c.f. https://cloud.google.com/run/docs/configuring/secrets
-            - name: SLACK_WEBHOOK_URL
-              valueFrom:
-                secretKeyRef:
-                  key: latest
-                  name: SLACK_WEBHOOK_URL
-
   traffic:
     - percent: 100
       latestRevision: true
