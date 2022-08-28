@@ -96,8 +96,5 @@ DEPENDENCIES
   sinatra-contrib (>= 2.2.0)
   slack-notifier (>= 2.4.0)
 
-RUBY VERSION
-   ruby 3.1.2p20
-
 BUNDLED WITH
    2.2.32
