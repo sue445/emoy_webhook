@@ -37,7 +37,6 @@ GEM
     redis (4.6.0)
     redis-objects (1.7.0)
       redis
-    rollbar (3.3.1)
     rspec (3.11.0)
       rspec-core (~> 3.11.0)
       rspec-expectations (~> 3.11.0)
@@ -90,7 +89,6 @@ DEPENDENCIES
   rack-test
   rake
   redis-objects
-  rollbar
   rspec
   simplecov
   sinatra-contrib (>= 2.2.0)
