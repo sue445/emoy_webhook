@@ -6,9 +6,11 @@ services:
     working_dir: "/app"
     environment:
       - SLACK_WEBHOOK_URL
-      # - DEBUG_LOGGING
-      - MAX_THREADS=1
-      - WEB_CONCURRENCY=0
+      # - DEBUG_LOGGING=false
+      # - PUMA_THREADS_MIN=0
+      # - PUMA_THREADS_MAX=1
+      # - PUMA_WORKERS=0
+      # - PUMA_PORT=8080
       - REDIS_URL=redis://redis:6379
     ports:
       - "8080:8080"
