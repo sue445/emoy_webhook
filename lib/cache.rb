@@ -19,7 +19,6 @@ class Cache
     end
   rescue => e
     logger.warn(e)
-    Rollbar.warning(e)
     nil
   end
 
@@ -29,7 +28,6 @@ class Cache
     end
   rescue => e
     logger.warn(e)
-    Rollbar.warning(e)
   end
 
   def exists?
