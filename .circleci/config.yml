@@ -3,7 +3,6 @@ version: 2.1
 orbs:
   codeclimate: sue445/codeclimate@volatile
   ruby-orbs: sue445/ruby-orbs@volatile
-  heroku:    circleci/heroku@volatile
   slack:     circleci/slack@3
 
 executors:
@@ -38,14 +37,3 @@ workflows:
   build-and-deploy:
     jobs:
       - rspec
-      - heroku/deploy-via-git:
-          name: "Deploy to prickathon-emoy-webhook"
-          app-name: "prickathon-emoy-webhook"
-          context: Heroku
-          requires:
-            - rspec
-          filters:
-            branches:
-              only: main
-          post-deploy:
-            - slack/status

@@ -16,6 +16,3 @@ emoy webhook (**Emo**ji notif**y** webhook) notify when new emoji is add
 * Incoming webhook
   * https://slack.com/apps/A0F7XDUAZ
 * redis (optional)
-
-## Heroku deploy
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
