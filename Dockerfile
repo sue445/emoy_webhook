@@ -1,4 +1,4 @@
-FROM ruby:3.1.2
+FROM ruby:3.1
 
 ENV RACK_ENV=production
 
