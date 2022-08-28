@@ -12,7 +12,6 @@ gem "slack-notifier", ">= 2.4.0"
 
 group :development do
   gem "dotenv", require: "dotenv/load"
-  gem "foreman", require: false
   gem "pry-byebug", group: :test
   gem "rake", require: false
 end
