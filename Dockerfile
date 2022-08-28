@@ -13,4 +13,4 @@ RUN bundle config set --local jobs 2 && \
 
 COPY . .
 
-CMD ["bundle", "exec", "puma", "-p", "8080"]
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
