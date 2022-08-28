@@ -39,8 +39,6 @@ jobs:
         with:
           images: |
             asia-docker.pkg.dev/emoy-webhook/emoy-webhook/app
-          tags: |
-            type=sha
 
       - id: auth
         name: Authenticate to Google Cloud
