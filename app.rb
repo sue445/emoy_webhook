@@ -7,6 +7,7 @@ require_relative "./lib/cache"
 
 class App < Sinatra::Base
   helpers Sinatra::CustomLogger
+  use Sentry::Rack::CaptureExceptions
 
   configure do
     debug_logging = ENV["DEBUG_LOGGING"] == "true"
@@ -14,6 +15,11 @@ class App < Sinatra::Base
     logger.level = debug_logging ? Logger::DEBUG : Logger::INFO
 
     set :logger, logger
+
+    Sentry.init do |config|
+      config.enabled_environments = %w[production development]
+      config.release = File.read(File.join(__dir__, "VERSION")).strip
+    end
   end
 
   before do

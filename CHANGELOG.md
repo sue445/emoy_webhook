@@ -5,3 +5,5 @@
 * Publish Docker image
 * Drop Heroku
   * https://github.com/sue445/emoy_webhook/issues/205
+* Add Sentry support
+  * https://github.com/sue445/emoy_webhook/pull/218

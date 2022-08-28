@@ -38,6 +38,7 @@ This application is provided as a Docker image, so you can run it wherever you l
 * `PUMA_PORT` : Puma port. default is `8080`
 * `REDIS_URL` : Redis URL (e.g. `redis://path-to-redis:6379`). This variable is optional, but I recommend setting this to prevent duplicate posts to Slack
 * `DEBUG_LOGGING` : If `true` is set, debug logs are output
+* `SENTRY_DSN` : [Sentry](https://sentry.io) DSN. This variable is optional. If you want to use Sentry, please set DSN
 
 ### Heroku
 This application was offered as a Heroku application, but [since Heroku is ending its free plan](https://blog.heroku.com/next-chapter), I have made it possible to run it outside of Heroku.

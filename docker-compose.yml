@@ -6,6 +6,7 @@ services:
     working_dir: "/app"
     environment:
       - SLACK_WEBHOOK_URL
+      - SENTRY_DSN
       # - DEBUG_LOGGING=false
       # - PUMA_THREADS_MIN=0
       # - PUMA_THREADS_MAX=1

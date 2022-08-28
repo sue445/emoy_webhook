@@ -7,6 +7,7 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gem "connection_pool"
 gem "puma", require: false
 gem "redis-objects"
+gem "sentry-ruby"
 gem "sinatra-contrib", ">= 2.2.0"
 gem "slack-notifier", ">= 2.4.0"
 
