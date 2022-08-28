@@ -13,6 +13,8 @@ on:
       - opened
       - synchronize
       - reopened
+    paths-ignore:
+      - "examples/**"
 
 env:
   # e.g. projects/123456789/locations/global/workloadIdentityPools/github-actions/providers/github-actions

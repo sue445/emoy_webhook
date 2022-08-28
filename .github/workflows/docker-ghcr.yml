@@ -11,6 +11,8 @@ on:
       - opened
       - synchronize
       - reopened
+    paths-ignore:
+      - "examples/**"
 
 jobs:
   build_and_push:
