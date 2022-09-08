@@ -3,6 +3,7 @@ Bundler.require(:default, ENV["RACK_ENV"])
 
 require "sinatra/custom_logger"
 require "logger"
+require "digest/sha1"
 require_relative "lib/redis_cache"
 
 class App < Sinatra::Base

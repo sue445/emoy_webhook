@@ -1,6 +1,4 @@
 class RedisCache
-  require "digest/sha1"
-
   attr_reader :key
 
   KEY_PREFIX = "emoy_webhook:"
