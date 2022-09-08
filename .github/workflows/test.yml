@@ -26,6 +26,8 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+        ports:
+          - 6379
 
     steps:
       - name: Checkout
@@ -46,7 +48,7 @@ jobs:
       - run: firebase --project test emulators:exec --only firestore "bundle exec rspec"
         env:
           RACK_ENV: test
-          REDIS_URL: redis://redis:6379/0
+          REDIS_URL: redis://127.0.0.1:${{ job.services.redis.ports['6379'] }}/0
 
       - name: Slack Notification
         uses: lazy-actions/slatify@master
