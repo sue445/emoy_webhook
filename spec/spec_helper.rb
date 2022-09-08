@@ -124,7 +124,7 @@ RSpec.configure do |config|
 
   config.before do
     redis = Redis.new(url: ENV["REDIS_URL"])
-    cache_keys = redis.keys(Cache::KEY_PREFIX + "*")
+    cache_keys = redis.keys(RedisCache::KEY_PREFIX + "*")
 
     redis.del(cache_keys) unless cache_keys.empty?
   end

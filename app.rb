@@ -3,7 +3,7 @@ Bundler.require(:default, ENV["RACK_ENV"])
 
 require "sinatra/custom_logger"
 require "logger"
-require_relative "./lib/cache"
+require_relative "lib/redis_cache"
 
 class App < Sinatra::Base
   helpers Sinatra::CustomLogger
@@ -63,7 +63,7 @@ class App < Sinatra::Base
           end
 
           if enabled_redis?
-            cache = Cache.new(message)
+            cache = RedisCache.new(message)
             unless cache.exists?
               App.post_slack(message)
               cache.set("1")

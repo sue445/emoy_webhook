@@ -1,4 +1,4 @@
-class Cache
+class RedisCache
   require "digest/sha1"
 
   attr_reader :key
