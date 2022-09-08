@@ -34,6 +34,17 @@ class RedisCache
     !!get
   end
 
+  # Run within block with once
+  # @param key [String]
+  # @yield
+  def self.with_once(key)
+    cache = RedisCache.new(key)
+    unless cache.exists?
+      yield
+      cache.set("1")
+    end
+  end
+
   private
 
   def logger

@@ -63,10 +63,8 @@ class App < Sinatra::Base
           end
 
           if enabled_redis?
-            cache = RedisCache.new(message)
-            unless cache.exists?
+            RedisCache.with_once(message) do
               App.post_slack(message)
-              cache.set("1")
             end
           else
             App.post_slack(message)
