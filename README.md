@@ -41,13 +41,13 @@ This application is provided as a Docker image, so you can run it wherever you l
 * `REDIS_URL` : Redis URLfor notification caching (e.g. `redis://path-to-redis:6379`). See following section for details
 * `FIRESTORE_COLLECTION` : Firestore collection name for notification caching (e.g. `emoy_webhook_cache`). See following section for details
 
-#### Notification caching
+### Notification caching
 emoy_webhook has the following notification caching mechanism. These are optional, but it is recommended to set one of them
 
-##### Redis
+#### Redis
 Set cache to Redis. If you use this, set `REDIS_URL` environment variable.
 
-##### Firestore
+#### Firestore
 Set cache to Firestore. If you use this, set `FIRESTORE_COLLECTION` environment variable.
 
 To automatically delete the saved cache, please do the following.
