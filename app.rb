@@ -4,6 +4,7 @@ Bundler.require(:default, ENV["RACK_ENV"])
 require "sinatra/custom_logger"
 require "logger"
 require "digest/sha1"
+require_relative "lib/firestore_cache"
 require_relative "lib/redis_cache"
 
 class App < Sinatra::Base
@@ -61,6 +62,10 @@ class App < Sinatra::Base
             RedisCache.with_once(message) do
               App.post_slack(message)
             end
+          elsif App.enabled_firestore?
+            FirestoreCache.with_once(ENV["FIRESTORE_COLLECTION"], message) do
+              App.post_slack(message)
+            end
           else
             App.post_slack(message)
           end
@@ -76,6 +81,10 @@ class App < Sinatra::Base
 
   def self.enabled_redis?
     ENV["REDIS_URL"] && !ENV["REDIS_URL"].empty?
+  end
+
+  def self.enabled_firestore?
+    ENV["FIRESTORE_COLLECTION"] && !ENV["FIRESTORE_COLLECTION"].empty?
   end
 
   def self.post_slack(message)
