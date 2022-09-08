@@ -1,7 +1,7 @@
 # emoy_webhook
 emoy webhook (**Emo**ji notif**y** webhook) notify when new emoji is add
 
-[![CircleCI](https://circleci.com/gh/sue445/emoy_webhook/tree/main.svg?style=svg)](https://circleci.com/gh/sue445/emoy_webhook/tree/main)
+[![test](https://github.com/sue445/emoy_webhook/actions/workflows/test.yml/badge.svg)](https://github.com/sue445/emoy_webhook/actions/workflows/test.yml)
 [![docker-ghcr](https://github.com/sue445/emoy_webhook/actions/workflows/docker-ghcr.yml/badge.svg)](https://github.com/sue445/emoy_webhook/actions/workflows/docker-ghcr.yml)
 [![docker-gcp](https://github.com/sue445/emoy_webhook/actions/workflows/docker-gcp.yml/badge.svg)](https://github.com/sue445/emoy_webhook/actions/workflows/docker-gcp.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/36a02d23c7caefc9a603/maintainability)](https://codeclimate.com/github/sue445/emoy_webhook/maintainability)
