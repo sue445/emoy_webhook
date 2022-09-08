@@ -23,14 +23,8 @@ class App < Sinatra::Base
   end
 
   before do
-    if enabled_redis?
+    if App.enabled_redis?
       Redis::Objects.redis = ConnectionPool.new(size: 5, timeout: 5) { Redis.new(url: ENV["REDIS_URL"]) }
-    end
-  end
-
-  helpers do
-    def enabled_redis?
-      ENV["REDIS_URL"] && !ENV["REDIS_URL"].empty?
     end
   end
 
@@ -62,7 +56,7 @@ class App < Sinatra::Base
             message << " (alias of `:#{origin_emoji}:`)"
           end
 
-          if enabled_redis?
+          if App.enabled_redis?
             RedisCache.with_once(message) do
               App.post_slack(message)
             end
@@ -77,6 +71,10 @@ class App < Sinatra::Base
     else
       raise "Unknown event: #{payload["type"]}"
     end
+  end
+
+  def self.enabled_redis?
+    ENV["REDIS_URL"] && !ENV["REDIS_URL"].empty?
   end
 
   def self.post_slack(message)

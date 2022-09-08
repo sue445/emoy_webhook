@@ -38,12 +38,32 @@ describe App do
             post "/", payload, { "CONTENT_TYPE" => "application/json" }
           end
 
-          it { should be_ok }
+          context "with redis" do
+            before do
+              allow(App).to receive(:enabled_redis?) { true }
+            end
 
-          it "post_slack is called once" do
-            subject
+            it { should be_ok }
 
-            expect(App).to have_received(:post_slack).with(message).once
+            it "post_slack is called once" do
+              subject
+
+              expect(App).to have_received(:post_slack).with(message).once
+            end
+          end
+
+          context "with no cache" do
+            before do
+              allow(App).to receive(:enabled_redis?) { false }
+            end
+
+            it { should be_ok }
+
+            it "post_slack is called twice" do
+              subject
+
+              expect(App).to have_received(:post_slack).with(message).twice
+            end
           end
         end
       end
