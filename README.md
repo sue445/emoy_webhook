@@ -1,7 +1,7 @@
 # emoy_webhook
 emoy webhook (**Emo**ji notif**y** webhook) notify when new emoji is add
 
-[![CircleCI](https://circleci.com/gh/sue445/emoy_webhook/tree/main.svg?style=svg)](https://circleci.com/gh/sue445/emoy_webhook/tree/main)
+[![test](https://github.com/sue445/emoy_webhook/actions/workflows/test.yml/badge.svg)](https://github.com/sue445/emoy_webhook/actions/workflows/test.yml)
 [![docker-ghcr](https://github.com/sue445/emoy_webhook/actions/workflows/docker-ghcr.yml/badge.svg)](https://github.com/sue445/emoy_webhook/actions/workflows/docker-ghcr.yml)
 [![docker-gcp](https://github.com/sue445/emoy_webhook/actions/workflows/docker-gcp.yml/badge.svg)](https://github.com/sue445/emoy_webhook/actions/workflows/docker-gcp.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/36a02d23c7caefc9a603/maintainability)](https://codeclimate.com/github/sue445/emoy_webhook/maintainability)
@@ -36,9 +36,27 @@ This application is provided as a Docker image, so you can run it wherever you l
 * `PUMA_THREADS_MAX` : Puma minimum threads count. default is `1` (to prevent duplicate posts to Slack)
 * `PUMA_WORKERS` : Puma workers count. default is `0` (to prevent duplicate posts to Slack)
 * `PUMA_PORT` : Puma port. default is `8080`
-* `REDIS_URL` : Redis URL (e.g. `redis://path-to-redis:6379`). This variable is optional, but I recommend setting this to prevent duplicate posts to Slack
 * `DEBUG_LOGGING` : If `true` is set, debug logs are output
 * `SENTRY_DSN` : [Sentry](https://sentry.io) DSN. This variable is optional. If you want to use Sentry, please set DSN
+* `REDIS_URL` : Redis URLfor notification caching (e.g. `redis://path-to-redis:6379`). See following section for details
+* `FIRESTORE_COLLECTION` : Firestore collection name for notification caching (e.g. `emoy_webhook_cache`). See following section for details
+
+### Notification caching
+emoy_webhook has the following notification caching mechanism. These are optional, but it is recommended to set one of them
+
+#### Redis
+Set cache to Redis. If you use this, set `REDIS_URL` environment variable.
+
+#### Firestore
+Set cache to Firestore. If you use this, set `FIRESTORE_COLLECTION` environment variable.
+
+To automatically delete the saved cache, please do the following.
+
+```bash
+gcloud beta firestore fields ttl update expires_at --collection-group=${FIRESTORE_COLLECTION} --enable-ttl
+```
+
+c.f. https://cloud.google.com/firestore/docs/ttl?hl=ja#gcloud
 
 ### Heroku
 This application was offered as a Heroku application, but [since Heroku is ending its free plan](https://blog.heroku.com/next-chapter), I have made it possible to run it outside of Heroku.

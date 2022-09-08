@@ -5,6 +5,7 @@ source "https://rubygems.org"
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem "connection_pool"
+gem "google-cloud-firestore", require: "google/cloud/firestore"
 gem "puma", require: false
 gem "redis-objects"
 gem "sentry-ruby"

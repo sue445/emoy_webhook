@@ -1,6 +1,4 @@
-class Cache
-  require "digest/sha1"
-
+class RedisCache
   attr_reader :key
 
   KEY_PREFIX = "emoy_webhook:"
@@ -32,6 +30,17 @@ class Cache
 
   def exists?
     !!get
+  end
+
+  # Run within block with once
+  # @param key [String]
+  # @yield
+  def self.with_once(key)
+    cache = RedisCache.new(key)
+    unless cache.exists?
+      yield
+      cache.set("1")
+    end
   end
 
   private

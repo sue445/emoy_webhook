@@ -3,7 +3,9 @@ Bundler.require(:default, ENV["RACK_ENV"])
 
 require "sinatra/custom_logger"
 require "logger"
-require_relative "./lib/cache"
+require "digest/sha1"
+require_relative "lib/firestore_cache"
+require_relative "lib/redis_cache"
 
 class App < Sinatra::Base
   helpers Sinatra::CustomLogger
@@ -23,14 +25,8 @@ class App < Sinatra::Base
   end
 
   before do
-    if enabled_redis?
+    if App.enabled_redis?
       Redis::Objects.redis = ConnectionPool.new(size: 5, timeout: 5) { Redis.new(url: ENV["REDIS_URL"]) }
-    end
-  end
-
-  helpers do
-    def enabled_redis?
-      ENV["REDIS_URL"] && !ENV["REDIS_URL"].empty?
     end
   end
 
@@ -62,11 +58,13 @@ class App < Sinatra::Base
             message << " (alias of `:#{origin_emoji}:`)"
           end
 
-          if enabled_redis?
-            cache = Cache.new(message)
-            unless cache.exists?
+          if App.enabled_redis?
+            RedisCache.with_once(message) do
               App.post_slack(message)
-              cache.set("1")
+            end
+          elsif App.enabled_firestore?
+            FirestoreCache.with_once(ENV["FIRESTORE_COLLECTION"], message) do
+              App.post_slack(message)
             end
           else
             App.post_slack(message)
@@ -79,6 +77,14 @@ class App < Sinatra::Base
     else
       raise "Unknown event: #{payload["type"]}"
     end
+  end
+
+  def self.enabled_redis?
+    ENV["REDIS_URL"] && !ENV["REDIS_URL"].empty?
+  end
+
+  def self.enabled_firestore?
+    ENV["FIRESTORE_COLLECTION"] && !ENV["FIRESTORE_COLLECTION"].empty?
   end
 
   def self.post_slack(message)
