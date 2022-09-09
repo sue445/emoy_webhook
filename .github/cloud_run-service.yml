@@ -29,6 +29,8 @@ spec:
               value: "1"
             - name: WEB_CONCURRENCY
               value: "0"
+            - name: FIRESTORE_COLLECTION
+              value: "emoy_webhook_cache"
 
             # Get credentials from SecretManager
             # c.f. https://cloud.google.com/run/docs/configuring/secrets
