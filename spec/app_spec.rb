@@ -21,7 +21,7 @@ describe App do
     context "when emoji_changed" do
       context "when add" do
         let(:payload) { fixture("emoji_changed_add.json") }
-        let(:message) { "A new emoji is added :picard_facepalm: `:picard_facepalm:`" }
+        let(:message) { "A new emoji is added :picard_facepalm: `picard_facepalm`" }
 
         context "called once" do
           it { should be_ok }
@@ -93,7 +93,7 @@ describe App do
         it "post_slack is called" do
           subject
 
-          message = "A new emoji is added :picard_facepalm_alias: `:picard_facepalm_alias:` (alias of `:picard_facepalm:`)"
+          message = "A new emoji is added :picard_facepalm_alias: `picard_facepalm_alias` (alias of `picard_facepalm`)"
           expect(App).to have_received(:post_slack).with(message)
         end
       end
