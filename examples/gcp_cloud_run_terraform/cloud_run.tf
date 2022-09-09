@@ -12,9 +12,10 @@ resource "google_cloud_run_service" "app" {
     }
     spec {
       container_concurrency = 1
+      service_account_name  = google_service_account.app.email
 
       containers {
-        image = "asia-docker.pkg.dev/emoy-webhook/emoy-webhook/app:latest"
+        image = "asia-docker.pkg.dev/emoy-webhook/emoy-webhook/app:${var.tag}"
 
         resources {
           limits = {
@@ -23,8 +24,27 @@ resource "google_cloud_run_service" "app" {
           }
         }
 
+        env {
+          name  = "SLACK_WEBHOOK_URL"
+          value = var.slack_webhook_url
+        }
+
+        env {
+          name  = "FIRESTORE_COLLECTION"
+          value = var.firestore_collection
+        }
+
         dynamic "env" {
-          for_each = var.env
+          for_each = length(var.sentry_dsn) > 0 ? [var.sentry_dsn] : []
+
+          content {
+            name  = "SENTRY_DSN"
+            value = var.sentry_dsn
+          }
+        }
+
+        dynamic "env" {
+          for_each = var.extra_env
 
           content {
             name  = env.value["name"]

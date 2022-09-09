@@ -1,7 +1,12 @@
 variable "gcp_project_id" {
   type        = string
   description = "GCP project ID"
-  default     = "" # TODO: Edit here
+}
+
+variable "tag" {
+  type        = string
+  description = "docker image tag for emoy_webhook"
+  default     = "latest"
 }
 
 variable "name" {
@@ -16,18 +21,29 @@ variable "location" {
   default     = "us-central1"
 }
 
-variable "env" {
+variable "slack_webhook_url" {
+  type        = string
+  description = "Incoming Webhook URL"
+}
+
+variable "firestore_collection" {
+  type        = string
+  description = "Firestore collection name for notification caching"
+  default     = "emoy_webhook_cache"
+}
+
+variable "sentry_dsn" {
+  type        = string
+  description = "Sentry DSN"
+  default     = ""
+}
+
+variable "extra_env" {
   type = list(object({
     name  = string
     value = string
   }))
 
   description = "Cloud Run app environment variables"
-
-  default = [
-    {
-      name  = "SLACK_WEBHOOK_URL",
-      value = "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX", # TODO: Edit here
-    },
-  ]
+  default     = []
 }
