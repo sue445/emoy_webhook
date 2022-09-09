@@ -53,7 +53,7 @@ Set cache to Firestore. If you use this, set `FIRESTORE_COLLECTION` environment 
 To automatically delete the saved cache, please do the following.
 
 ```bash
-gcloud beta firestore fields ttl update expires_at --collection-group=${FIRESTORE_COLLECTION} --enable-ttl
+gcloud beta firestore fields ttls update expires_at --collection-group=${FIRESTORE_COLLECTION} --enable-ttl
 ```
 
 c.f. https://cloud.google.com/firestore/docs/ttl?hl=ja#gcloud
