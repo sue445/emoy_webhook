@@ -44,6 +44,11 @@ spec:
                 secretKeyRef:
                   key: latest
                   name: SLACK_WEBHOOK_URL
+            - name: SENTRY_DSN
+              valueFrom:
+                secretKeyRef:
+                  key: latest
+                  name: SENTRY_DSN
 
   traffic:
     - percent: 100
