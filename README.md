@@ -28,7 +28,7 @@ This application is provided as a Docker image, so you can run it wherever you l
 * [Google Artifact Registry](https://console.cloud.google.com/artifacts/docker/emoy-webhook/asia/emoy-webhook/app): If you want to run this app on [Cloud Run](https://cloud.google.com/run), use this image
   * `asia-docker.pkg.dev/emoy-webhook/emoy-webhook/app:latest`: Use latest version
   * `asia-docker.pkg.dev/emoy-webhook/emoy-webhook/app:X.Y.Z`: Use specified version
-  * `asia-docker.pkg.dev/emoy-webhook/emoy-webhook/app:main`: The contents of the main branch are pushed to this tag
+  * `asia-docker.pkg.dev/emoy-webhook/emoy-webhook/app:edge`: The contents of the main branch are pushed to this tag
 
 #### Available environment variables
 * `SLACK_WEBHOOK_URL` **(Required)** : Incoming Webhook URL
