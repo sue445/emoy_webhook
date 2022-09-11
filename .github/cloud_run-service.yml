@@ -25,12 +25,17 @@ spec:
               memory: 128Mi
 
           env:
-            - name: MAX_THREADS
-              value: "1"
-            - name: WEB_CONCURRENCY
-              value: "0"
             - name: FIRESTORE_COLLECTION
               value: "emoy_webhook_cache"
+
+            # - name: PUMA_PORT
+            #   value: "8080"
+            # - name: PUMA_WORKERS
+            #   value: "1"
+            # - name: PUMA_MIN_THREADS
+            #   value: "1"
+            # - name: PUMA_MAX_THREADS
+            #   value: "5"
 
             # Get credentials from SecretManager
             # c.f. https://cloud.google.com/run/docs/configuring/secrets
