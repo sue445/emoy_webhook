@@ -56,7 +56,7 @@ To automatically delete the saved cache, please do the following.
 gcloud beta firestore fields ttls update expires_at --collection-group=${FIRESTORE_COLLECTION} --enable-ttl --async
 ```
 
-c.f. https://cloud.google.com/firestore/docs/ttl?hl=ja#gcloud
+c.f. https://cloud.google.com/firestore/docs/ttl#gcloud
 
 ### Heroku
 This application was offered as a Heroku application, but [since Heroku is ending its free plan](https://blog.heroku.com/next-chapter), I have made it possible to run it outside of Heroku.
