@@ -60,20 +60,7 @@ gcloud firestore fields ttls update expires_at --collection-group=${FIRESTORE_CO
 c.f. https://cloud.google.com/firestore/docs/ttl#gcloud
 
 ##### Terraform
-```tf
-resource "google_firestore_field" "emoy_webhook_cache_expires_at" {
-  collection = "emoy_webhook_cache"
-  field      = "expires_at"
-
-  # Enable TTL
-  ttl_config {
-  }
-}
-```
-
-requires [terraform-provider-google](https://github.com/hashicorp/terraform-provider-google) 4.65.0+
-
-c.f. https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/firestore_field#nested_ttl_config
+See. [examples/gcp_cloud_run_terraform/firestore.tf](examples/gcp_cloud_run_terraform/firestore.tf)
 
 ### Heroku
 This application was offered as a Heroku application, but [since Heroku is ending its free plan](https://blog.heroku.com/next-chapter), I have made it possible to run it outside of Heroku.
