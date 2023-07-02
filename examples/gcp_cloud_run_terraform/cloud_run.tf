@@ -9,6 +9,10 @@ resource "google_cloud_run_service" "app" {
         "autoscaling.knative.dev/maxScale" = 1
         "run.googleapis.com/client-name"   = "cloud-console"
       }
+
+      labels = {
+        "run.googleapis.com/startupProbeType" = "Default"
+      }
     }
     spec {
       container_concurrency = 1
