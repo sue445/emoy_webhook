@@ -146,6 +146,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
+    uri (0.12.2)
 
 PLATFORMS
   ruby
@@ -164,6 +165,7 @@ DEPENDENCIES
   simplecov
   sinatra-contrib (>= 2.2.0)
   slack-notifier (>= 2.4.0)
+  uri (>= 0.12.2)
 
 BUNDLED WITH
    2.3.7
