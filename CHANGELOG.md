@@ -1,5 +1,11 @@
 # Unreleased
-[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.1...main)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.2...main)
+
+# 1.1.2
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.1...1.1.2)
+
+* Restore latest tag on [`asia-docker.pkg.dev/emoy-webhook/emoy-webhook/app`](https://console.cloud.google.com/artifacts/docker/emoy-webhook/asia/emoy-webhook/app)
+* Upgrade dependencies
 
 # 1.1.1
 [full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.0...1.1.1)
