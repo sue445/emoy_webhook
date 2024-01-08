@@ -71,7 +71,7 @@ GEM
     nio4r (2.7.0)
     os (1.1.4)
     public_suffix (5.0.1)
-    puma (6.4.1)
+    puma (6.4.2)
       nio4r (~> 2.0)
     rack (2.2.8)
     rack-protection (3.2.0)
