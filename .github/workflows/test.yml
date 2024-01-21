@@ -49,6 +49,20 @@ jobs:
           RACK_ENV: test
           REDIS_URL: redis://127.0.0.1:${{ job.services.redis.ports['6379'] }}/0
 
+      - name: Integration test
+        run: |
+          set -xe
+          bundle exec puma -C config/puma.rb &
+          
+          # FIXME: Wait for booting
+          sleep 3
+
+          # Check status code
+          curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/ | grep "200"
+
+          pid=$(jobs -l | grep puma | awk '{print $2}')
+          kill -9 $pid
+
       - name: Slack Notification
         uses: lazy-actions/slatify@master
         if: always()
