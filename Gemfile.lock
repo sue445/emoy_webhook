@@ -140,7 +140,7 @@ GEM
     tilt (2.3.0)
     tins (1.32.1)
       sync
-    uri (1.0.1)
+    uri (1.0.2)
 
 PLATFORMS
   ruby
