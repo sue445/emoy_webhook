@@ -74,10 +74,10 @@ GEM
       ruby2_keywords (~> 0.0.1)
     net-http (0.4.1)
       uri
-    nio4r (2.7.3)
+    nio4r (2.7.4)
     os (1.1.4)
     public_suffix (6.0.0)
-    puma (6.4.3)
+    puma (6.5.0)
       nio4r (~> 2.0)
     rack (3.1.8)
     rack-protection (4.1.1)
