@@ -14,7 +14,7 @@ GEM
       tins (~> 1.32)
     diff-lcs (1.5.1)
     docile (1.4.0)
-    dotenv (3.1.6)
+    dotenv (3.1.7)
     faraday (2.10.0)
       faraday-net_http (>= 2.0, < 3.2)
       logger
