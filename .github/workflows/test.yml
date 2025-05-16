@@ -40,7 +40,11 @@ jobs:
       - name: Install firebase emulator
         run: |
           set -xe
-          sudo wget https://firebase.tools/bin/linux/latest -O /usr/local/bin/firebase --quiet
+
+          # FIXME: Couldn't download https://github.com/firebase/firebase-tools/releases/tag/v14.4.0
+          # sudo wget https://firebase.tools/bin/linux/latest -O /usr/local/bin/firebase
+          sudo wget https://github.com/firebase/firebase-tools/releases/download/v14.3.1/firebase-tools-linux -O /usr/local/bin/firebase
+
           sudo chmod 755 /usr/local/bin/firebase
           firebase setup:emulators:firestore
 
