@@ -68,3 +68,12 @@ This application was offered as a Heroku application, but [since Heroku is endin
 So this app can run outside of Heroku.
 
 If you want to run this app on Heroku, browse [heroku branch](https://github.com/sue445/emoy_webhook/tree/heroku) and click "Deploy to Heroku" button.
+
+## Development
+Run at local
+
+```bash
+docker compose up --build
+```
+
+See http://localhost:8080
