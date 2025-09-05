@@ -1,5 +1,12 @@
 # Unreleased
-[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.6...main)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.7...main)
+
+# [1.1.7](https://github.com/sue445/emoy_webhook/releases/tag/1.1.7)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.6...1.1.7)
+
+* Migrate Docker image to slim
+  * https://github.com/sue445/emoy_webhook/pull/430
+* Upgrade dependencies
 
 # [1.1.6](https://github.com/sue445/emoy_webhook/releases/tag/1.1.6)
 [full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.5...1.1.6)
