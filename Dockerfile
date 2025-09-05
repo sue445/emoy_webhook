@@ -5,7 +5,7 @@ ENV RACK_ENV=production
 WORKDIR /app
 
 RUN apt-get update && \
-    apt-get install -y gcc ruby-dev make && \
+    apt-get install -y gcc make && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
