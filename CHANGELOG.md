@@ -1,5 +1,11 @@
 # Unreleased
-[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.7...main)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.8...main)
+
+# [1.1.8](https://github.com/sue445/emoy_webhook/releases/tag/1.1.8)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.7...1.1.8)
+
+* docker: Don't install needless package
+  * https://github.com/sue445/emoy_webhook/pull/431
 
 # [1.1.7](https://github.com/sue445/emoy_webhook/releases/tag/1.1.7)
 [full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.6...1.1.7)
