@@ -1,5 +1,12 @@
 # Unreleased
-[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.8...main)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.9...main)
+
+# [1.1.9](https://github.com/sue445/emoy_webhook/releases/tag/1.1.9)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.8...1.1.9)
+
+* [CVE-2025-61770][CVE-2025-61771][CVE-2025-61772] Bump rack from 3.1.16 to 3.1.17
+  * https://github.com/sue445/emoy_webhook/pull/440
+* Upgrade dependencies
 
 # [1.1.8](https://github.com/sue445/emoy_webhook/releases/tag/1.1.8)
 [full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.7...1.1.8)
