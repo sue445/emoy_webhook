@@ -1,5 +1,11 @@
 # Unreleased
-[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.10...main)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.11...main)
+
+# [1.1.11](https://github.com/sue445/emoy_webhook/releases/tag/1.1.11)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.10...1.1.11)
+
+* [CVE-2025-61594] Bump uri from 1.0.3 to 1.0.4
+  * https://github.com/sue445/emoy_webhook/pull/443
 
 # [1.1.10](https://github.com/sue445/emoy_webhook/releases/tag/1.1.10)
 [full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.9...1.1.10)
