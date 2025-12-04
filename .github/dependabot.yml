@@ -1,25 +1,35 @@
 version: 2
 updates:
+  ###########################################################
+  # NOTE: following sections are auto generated. DO NOT EDIT!
+  ###########################################################
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: monthly
       time: "05:00"
       timezone: Asia/Tokyo
-    cooldown:
-      default-days: 7
     assignees:
       - sue445
+    cooldown:
+      default-days: 7
+      exclude:
+        - ruby/setup-ruby
+  ###########################################################
 
+  ###########################################################
+  # NOTE: following sections are auto generated. DO NOT EDIT!
+  ###########################################################
   - package-ecosystem: bundler
     directory: "/"
     schedule:
       interval: daily
       time: "05:00"
       timezone: Asia/Tokyo
-    cooldown:
-      default-days: 7
-    open-pull-requests-limit: 99
     assignees:
       - sue445
     versioning-strategy: lockfile-only
+    cooldown:
+      default-days: 7
+  ###########################################################
+
