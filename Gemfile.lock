@@ -14,7 +14,7 @@ GEM
       tins (~> 1.32)
     diff-lcs (1.6.2)
     docile (1.4.1)
-    dotenv (3.1.8)
+    dotenv (3.2.0)
     faraday (2.14.0)
       faraday-net_http (>= 2.0, < 3.5)
       json
@@ -183,7 +183,7 @@ CHECKSUMS
   coveralls_reborn (0.29.0) sha256=dca1149ca8f527561a9c0e0cbddebd13e292ef362629c9d56ab02c73a9a35be1
   diff-lcs (1.6.2) sha256=9ae0d2cba7d4df3075fe8cd8602a8604993efc0dfa934cff568969efb1909962
   docile (1.4.1) sha256=96159be799bfa73cdb721b840e9802126e4e03dfc26863db73647204c727f21e
-  dotenv (3.1.8) sha256=9e1176060ced581f8e6ce4384e91361817763a76e3c625c8bddc18b35bd392c3
+  dotenv (3.2.0) sha256=e375b83121ea7ca4ce20f214740076129ab8514cd81378161f11c03853fe619d
   faraday (2.14.0) sha256=8699cfe5d97e55268f2596f9a9d5a43736808a943714e3d9a53e6110593941cd
   faraday-net_http (3.4.2) sha256=f147758260d3526939bf57ecf911682f94926a3666502e24c69992765875906c
   faraday-retry (2.3.2) sha256=2402d2029032ebd238a2046221e67f6ef0da78c5a8ce8cd4f8b9c62e4d6451d1
