@@ -37,6 +37,11 @@ jobs:
         with:
           bundler-cache: true
 
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
       - name: Install firebase emulator
         run: |
           set -xe
