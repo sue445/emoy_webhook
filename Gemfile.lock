@@ -6,7 +6,7 @@ GEM
     base64 (0.3.0)
     bigdecimal (3.3.1)
     concurrent-ruby (1.3.5)
-    connection_pool (3.0.1)
+    connection_pool (3.0.2)
     coveralls_reborn (0.29.0)
       simplecov (~> 0.22.0)
       term-ansicolor (~> 1.7)
@@ -179,7 +179,7 @@ CHECKSUMS
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bigdecimal (3.3.1) sha256=eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218
   concurrent-ruby (1.3.5) sha256=813b3e37aca6df2a21a3b9f1d497f8cbab24a2b94cab325bffe65ee0f6cbebc6
-  connection_pool (3.0.1) sha256=819ea60fcbee0b557fec6dce41925ec7d24a137a6602587785a9e5a3aaaa6b6c
+  connection_pool (3.0.2) sha256=33fff5ba71a12d2aa26cb72b1db8bba2a1a01823559fb01d29eb74c286e62e0a
   coveralls_reborn (0.29.0) sha256=dca1149ca8f527561a9c0e0cbddebd13e292ef362629c9d56ab02c73a9a35be1
   diff-lcs (1.6.2) sha256=9ae0d2cba7d4df3075fe8cd8602a8604993efc0dfa934cff568969efb1909962
   docile (1.4.1) sha256=96159be799bfa73cdb721b840e9802126e4e03dfc26863db73647204c727f21e
