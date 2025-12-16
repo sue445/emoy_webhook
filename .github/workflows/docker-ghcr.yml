@@ -51,3 +51,17 @@ jobs:
         with:
           status: ${{ job.status }}
           webhook-url: ${{ secrets.SLACK_WEBHOOK }}
+
+  all-pass-docker-ghcr:
+    if: always()
+
+    needs:
+      - build_and_push
+
+    runs-on: ubuntu-slim
+
+    steps:
+      - name: check dependent jobs
+        uses: re-actors/alls-green@05ac9388f0aebcb5727afa17fcccfecd6f8ec5fe # v1.2.2
+        with:
+          jobs: ${{ toJSON(needs) }}
