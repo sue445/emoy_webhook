@@ -1,4 +1,6 @@
-FROM ruby:3.4-slim
+ARG RUBY_VERSION=4.0
+
+FROM ruby:${RUBY_VERSION}-slim
 
 ENV RACK_ENV=production
 
