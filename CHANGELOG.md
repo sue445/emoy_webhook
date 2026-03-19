@@ -1,5 +1,12 @@
 # Unreleased
-[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.14...main)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.15...main)
+
+# [1.1.15](https://github.com/sue445/emoy_webhook/releases/tag/1.1.15)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.14...1.1.15)
+
+* [CVE-2026-33210] Bump json from 2.18.1 to 2.19.2
+  * https://github.com/sue445/emoy_webhook/pull/499
+* Upgrade dependencies
 
 # [1.1.14](https://github.com/sue445/emoy_webhook/releases/tag/1.1.14)
 [full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.13...1.1.14)
