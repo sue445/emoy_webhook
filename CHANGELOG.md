@@ -1,5 +1,11 @@
 # Unreleased
-[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.16...main)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.17...main)
+
+# [1.1.17](https://github.com/sue445/emoy_webhook/releases/tag/1.1.17)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.16...1.1.17)
+
+* [CVE-2026-39324] Bump rack-session from 2.1.1 to 2.1.2
+  * https://github.com/sue445/emoy_webhook/pull/508
 
 # [1.1.16](https://github.com/sue445/emoy_webhook/releases/tag/1.1.16)
 [full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.15...1.1.16)
