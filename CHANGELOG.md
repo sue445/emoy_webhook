@@ -1,5 +1,11 @@
 # Unreleased
-[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.17...main)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.18...main)
+
+# [1.1.18](https://github.com/sue445/emoy_webhook/releases/tag/1.1.18)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.17...1.1.18)
+
+* [CVE-2026-35611] Bump addressable from 2.8.7 to 2.9.0
+  * https://github.com/sue445/emoy_webhook/pull/509
 
 # [1.1.17](https://github.com/sue445/emoy_webhook/releases/tag/1.1.17)
 [full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.16...1.1.17)
