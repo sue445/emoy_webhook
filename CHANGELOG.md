@@ -1,5 +1,12 @@
 # Unreleased
-[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.18...main)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.19...main)
+
+# [1.1.19](https://github.com/sue445/emoy_webhook/releases/tag/1.1.19)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.18...1.1.19)
+
+* [CVE-2026-33637] Bump faraday from 2.14.1 to 2.14.2
+  * https://github.com/sue445/emoy_webhook/pull/518
+* Upgrade dependencies
 
 # [1.1.18](https://github.com/sue445/emoy_webhook/releases/tag/1.1.18)
 [full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.17...1.1.18)
