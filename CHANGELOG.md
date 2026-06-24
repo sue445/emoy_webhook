@@ -1,5 +1,11 @@
 # Unreleased
-[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.20...main)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.21...main)
+
+# [1.1.21](https://github.com/sue445/emoy_webhook/releases/tag/1.1.21)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.20...1.1.21)
+
+* [CVE-2026-54904] Bump concurrent-ruby from 1.3.6 to 1.3.7
+  * https://github.com/sue445/emoy_webhook/pull/529
 
 # [1.1.20](https://github.com/sue445/emoy_webhook/releases/tag/1.1.20)
 [full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.19...1.1.20)
