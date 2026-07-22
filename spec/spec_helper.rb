@@ -5,7 +5,7 @@ if ENV["CI"]
   SimpleCov.formatter = Coveralls::SimpleCov::Formatter
   SimpleCov.start do
     %w[spec].each do |ignore_path|
-      add_filter(ignore_path)
+      skip(ignore_path)
     end
   end
 end
