@@ -134,7 +134,7 @@ GEM
       faraday (>= 0.17.5, < 3.a)
       jwt (>= 1.5, < 4.0)
       multi_json (~> 1.10)
-    simplecov (1.0.1)
+    simplecov (1.0.2)
     sinatra (4.2.1)
       logger (>= 1.6.0)
       mustermann (~> 3.0)
@@ -237,7 +237,7 @@ CHECKSUMS
   ruby2_keywords (0.0.5) sha256=ffd13740c573b7301cf7a2e61fc857b2a8e3d3aff32545d6f8300d8bae10e3ef
   sentry-ruby (6.6.2) sha256=a64aaf757d10058598fe5871de925b2a5a3d78273feb9bca23fff843accc6cd6
   signet (0.21.0) sha256=d617e9fbf24928280d39dcfefba9a0372d1c38187ffffd0a9283957a10a8cd5b
-  simplecov (1.0.1) sha256=419d93c40484159d20b40e26e9a83cdd4c3afa2f3fd443bb8946c301cd658d75
+  simplecov (1.0.2) sha256=c6459434efe4b948b46477cc2df2faa73ab365f83a33c7c17f81262f4f7f1244
   sinatra (4.2.1) sha256=b7aeb9b11d046b552972ade834f1f9be98b185fa8444480688e3627625377080
   sinatra-contrib (4.2.1) sha256=10d091c944d268aa910c618ea40a3c3ebe0533e6e32990d84af92235a3d26b4a
   slack-notifier (2.4.0) sha256=cd9aba3f5f3e6227f73df1f6a33ac6c127c5fac35b513b86b7ba900cd98d2b00
