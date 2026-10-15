@@ -159,7 +159,7 @@ GEM
       mize (~> 0.6)
       readline
       sync
-    uri (1.1.1)
+    uri (1.1.2)
 
 PLATFORMS
   ruby
@@ -246,7 +246,7 @@ CHECKSUMS
   thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73
   tilt (2.6.1) sha256=35a99bba2adf7c1e362f5b48f9b581cce4edfba98117e34696dde6d308d84770
   tins (1.54.0) sha256=62e14ff2f8ace5eb52828f7262987a434f8411de3aac2aa27ef4680446557af9
-  uri (1.1.1) sha256=379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6
+  uri (1.1.2) sha256=89292e98eabbef6248b0a0ed5e7e398e152f83f17560023a6d94a7f492b169fb
 
 BUNDLED WITH
   4.0.15
