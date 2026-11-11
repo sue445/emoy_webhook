@@ -1,5 +1,12 @@
 # Unreleased
-[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.22...main)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.23...main)
+
+# [1.1.23](https://github.com/sue445/emoy_webhook/releases/tag/1.1.23)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.22...1.1.23)
+
+* [CVE-2026-125110] Bump rack from 3.2.7 to 3.2.8
+  * https://github.com/sue445/emoy_webhook/pull/572
+* Upgrade dependencies
 
 # [1.1.22](https://github.com/sue445/emoy_webhook/releases/tag/1.1.22)
 [full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.21...1.1.22)
