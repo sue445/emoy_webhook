@@ -1,5 +1,12 @@
 # Unreleased
-[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.23...main)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.24...main)
+
+# [1.1.24](https://github.com/sue445/emoy_webhook/releases/tag/1.1.24)
+[full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.23...1.1.24)
+
+* [Security] Upgrade to Ruby 4.0.10 :gem:
+  * https://github.com/sue445/emoy_webhook/pull/573
+* Upgrade dependencies
 
 # [1.1.23](https://github.com/sue445/emoy_webhook/releases/tag/1.1.23)
 [full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.22...1.1.23)
