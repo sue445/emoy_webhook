@@ -7,7 +7,7 @@
 * [Security] Upgrade to Ruby 4.0.10 :gem:
   * https://github.com/sue445/emoy_webhook/pull/573
 * Upgrade dependencies
-
+z
 # [1.1.23](https://github.com/sue445/emoy_webhook/releases/tag/1.1.23)
 [full changelog](http://github.com/sue445/emoy_webhook/compare/1.1.22...1.1.23)
 
